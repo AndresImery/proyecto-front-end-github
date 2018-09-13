@@ -18,7 +18,7 @@ class Planets extends Component {
       axios.get('https://swapi.co/api/planets/')
         .then((response) => {
           console.log(response)
-          this.setState({planets: response.data})
+          this.setState({planets: response.data.results})
         }).catch((error) => {
           console.log(error)
         });
@@ -27,27 +27,29 @@ class Planets extends Component {
 
   }
   render() {
-    var planetas = this.state.planets.map(function(planeta){
-      return <div className="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+    var planetas = this.state.planets.map(function(planets){
+      return (
+      <div className="col-lg-3 col-md-4 col-sm-6 portfolio-item">
       <div className="card h-100">
         <div className="card-body">
           <h4 className="card-title">
-          {this.state.planets.name}
+          {planets.name}
           </h4>
-
-          <p className="lead">Model: {this.state.planets.model}</p>
           <hr className="my-4"/>
-          <p>Length: {this.state.planets.length}</p>
+          <p className="lead">Diameter: {planets.diameter}</p>
           <hr className="my-4"/>
-          <p>Crew: {this.state.planets.crew}</p>
+          <p>Climate: {planets.climate}</p>
           <hr className="my-4"/>
-          <p>Passengers: {this.state.planets.passengers}</p>
+          <p>Terrain: {planets.terrain}</p>
           <hr className="my-4"/>
-          <p>Vehicle Class: {this.state.planets.vehicle_class}</p>
+          <p>Water Surface: {planets.surface_water}</p>
+          <hr className="my-4"/>
+          <p>Population: {planets.population}</p>
+          <hr className="my-4"/>
         </div>
       </div>
     </div>
-    
+    )
     })
     return (
 

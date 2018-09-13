@@ -17,7 +17,7 @@ class Vehicles extends Component {
       axios.get('https://swapi.co/api/vehicles/')
         .then((response) => {
           console.log(response)
-          this.setState({vehicles: response.data})
+          this.setState({vehicles: response.data.results})
         }).catch((error) => {
           console.log(error)
         });
@@ -26,23 +26,23 @@ class Vehicles extends Component {
 
   }
   render() {
-    var vehiculos = this.state.vehicles.map(function(vehiculo){
+    var vehiculos = this.state.vehicles.map(function(vehicle){
       return <div className="col-lg-3 col-md-4 col-sm-6 portfolio-item">
       <div className="card h-100">
         <div className="card-body">
           <h4 className="card-title">
-          {this.state.vehicles.name}
+          {vehicle.name}
           </h4>
 
-          <p className="lead">Model: {this.state.users.model}</p>
+          <p className="lead">Model: {vehicle.model}</p>
           <hr className="my-4"/>
-          <p>Length: {this.state.vehicles.length}</p>
+          <p>Length: {vehicle.length}</p>
           <hr className="my-4"/>
-          <p>Crew: {this.state.vehicles.crew}</p>
+          <p>Crew: {vehicle.crew}</p>
           <hr className="my-4"/>
-          <p>Passengers: {this.state.vehicles.passengers}</p>
+          <p>Passengers: {vehicle.passengers}</p>
           <hr className="my-4"/>
-          <p>Vehicle Class: {this.state.vehicles.vehicle_class}</p>
+          <p>Vehicle Class: {vehicle.vehicle_class}</p>
         </div>
       </div>
     </div>

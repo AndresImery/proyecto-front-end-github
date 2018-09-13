@@ -18,7 +18,7 @@ class Movies extends Component {
       axios.get('https://swapi.co/api/films/')
         .then((response) => {
           console.log(response)
-          this.setState({movies: response.data})
+          this.setState({movies: response.data.results})
         }).catch((error) => {
           console.log(error)
         });
@@ -27,31 +27,49 @@ class Movies extends Component {
 
   }
   render() {
-    var films = this.state.movies.map(function(film){
-      return <div className="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-      <div className="card h-100">
-        <div className="card-body">
-          <h4 className="card-title">
-          {this.state.movies.name}
-          </h4>
-
-          <p className="lead">Episode: {this.state.movies.episode_id}</p>
-          <hr className="my-4"/>
-          <p>Title: {this.state.movies.title}</p>
-          <hr className="my-4"/>
-          <p>Opening Crawl: {this.state.movies.opening_crawl}</p>
-          <hr className="my-4"/>
-          <p>Date: {this.state.movies.release_date}</p>
-          <hr className="my-4"/>
-          <p>Director: {this.state.movies.director}</p>
-          <hr className="my-4"/>
-          <p>Producer: {this.state.movies.producer}</p>
-          <hr className="my-4"/>
-          <p>Characters: {this.state.movies.characters}</p>
-        </div>
-      </div>
-    </div>
-    
+    var film = this.state.movies.map(function(movies){
+      return (
+        <div class="jumbotron">
+                    <h1 class="display-4">Episode {movies.episode_id}</h1>
+                    <p class="lead">Title: {movies.title}</p>
+                    <p>{movies.opening_crawl}</p>
+                    <p>Date: {movies.release_date}</p>
+                    <p>Director : {movies.director}</p>
+                    <p>Producer: {movies.producer}</p>
+                    <p class="lead">
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Characters in the movie
+                        </button>
+                    </p>
+                      <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            <ul id="lista-de-personajes-movies">
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                              <li>Nombre de Personaje</li>
+                            </ul>
+                        </div>
+                      </div>      
+                </div>
+      );
     })
     return (
 
@@ -59,7 +77,7 @@ class Movies extends Component {
         <h1 className="my-4">Films</h1>
 
             <div className="row">
-            {films}
+            {film}
             </div>
             
       </div>
@@ -69,3 +87,27 @@ class Movies extends Component {
 }
 
 export default Movies;
+
+/*<div className="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+      <div className="card h-100">
+        <div className="card-body">
+          <h4 className="card-title">
+          {movies.name}
+          </h4>
+
+          <p className="lead">Episode: {movies.episode_id}</p>
+          <hr className="my-4"/>
+          <p>Title: {movies.title}</p>
+          <hr className="my-4"/>
+          <p>Opening Crawl: {movies.opening_crawl}</p>
+          <hr className="my-4"/>
+          <p>Date: {movies.release_date}</p>
+          <hr className="my-4"/>
+          <p>Director: {movies.director}</p>
+          <hr className="my-4"/>
+          <p>Producer: {movies.producer}</p>
+          <hr className="my-4"/>
+          <p>Characters: {movies.characters}</p>
+        </div>
+      </div>
+    </div>*/

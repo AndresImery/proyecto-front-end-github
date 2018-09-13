@@ -18,14 +18,14 @@ class Characters extends Component {
       axios.get('https://swapi.co/api/people/')
         .then((response) => {
           console.log(response)
-          this.setState({people: response.data})
+          this.setState({people: response.data.results})
         }).catch((error) => {
           console.log(error)
         });
 
   }
   render() {
-    var people = this.state.people.map(function(people, species){
+    var people = this.state.people.map(function(persons){
       return <div className="col-lg-3 col-md-4 col-sm-6 portfolio-item">
       <div className="card h-100">
         <div id="img-top">
@@ -33,18 +33,18 @@ class Characters extends Component {
         </div>
         <div className="card-body">
           <h4 className="card-title">
-            {this.state.people.name}
+            {persons.name}
           </h4>
           <hr className="my-4"/>
-          <p>Species: {this.state.people.species}, {this.state.people.species}</p>
+          <p>Species: {persons.species}, {persons.species}</p>
           <hr className="my-4"/>
-          <p>Home Planet: {this.state.people.homeworld}</p>
+          <p>Home Planet: {persons.homeworld}</p>
           <hr className="my-4"/>
-          <p>Language: {this.state.people.language}</p>
+          <p>Language: {persons.language}</p>
           <hr className="my-4"/>
           <p>Movies:</p>
           <ul>
-            <li>{this.state.people.films}</li>
+            <li>{persons.films}</li>
             <li>6</li>
             <li>3</li>
             <li>1</li>
