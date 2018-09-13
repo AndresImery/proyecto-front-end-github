@@ -5,7 +5,6 @@ import axios from 'axios';
 class Home extends Component {
   constructor(props){
     super(props);
-
     this.state = {
       films : []
     }
@@ -25,13 +24,13 @@ class Home extends Component {
 
   }
   render() {
-    var films = this.props.films.map(function(films){
+    var films = this.state.films.map(function(films){
       return <div className="col-lg-3 col-md-4 col-sm-6 portfolio-item">
       <div id="card" className="card h-100">
         <a href="#"><img id="img" className="card-img-top" src="https://i.jeded.com/i/star-wars-episode-iv--a-new-hope.12987.jpg" alt=""/></a>
         <div className="card-body">
           <h4 className="card-title">
-            <a href="#">Episode {this.state.films.episode_id}</a>
+            <a href="#">Episode {films.episode_id}</a>
           </h4>
           <ul id="descrip">
             <li>{this.state.films.title}</li>
