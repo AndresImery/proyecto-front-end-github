@@ -6,7 +6,7 @@ class Home extends Component {
   constructor(props){
     super(props);
     this.state = {
-      films : []
+      films : [],
     }
   }
 
@@ -15,7 +15,7 @@ class Home extends Component {
       axios.get('https://swapi.co/api/films/')
         .then((response) => {
           console.log(response)
-          this.setState({films: response.results})
+          this.setState({films: response.data.results})
         }).catch((error) => {
           console.log(error)
         });
@@ -24,20 +24,20 @@ class Home extends Component {
 
   }
   render() {
-    var films = this.state.films.map(function(films){
+    var films = this.state.films.map(function(film){
       return <div className="col-lg-3 col-md-4 col-sm-6 portfolio-item">
       <div id="card" className="card h-100">
         <a href="#"><img id="img" className="card-img-top" src="https://i.jeded.com/i/star-wars-episode-iv--a-new-hope.12987.jpg" alt=""/></a>
         <div className="card-body">
           <h4 className="card-title">
-            <a href="#">Episode {films.episode_id}</a>
+            <a href="#">Episode {film.episode_id}</a>
           </h4>
           <ul id="descrip">
-            <li>{this.state.films.title}</li>
-            <li>{this.state.films.opening_crawl}</li>
-            <li>{this.state.films.director}</li>
-            <li>{this.state.films.producer}</li>
-            <li>{this.state.films.release_date}</li>
+            <li>{film.title}</li>
+            <li>{film.opening_crawl}</li>
+            <li>{film.director}</li>
+            <li>{film.producer}</li>
+            <li>{film.release_date}</li>
           </ul>
         </div>
       </div>
