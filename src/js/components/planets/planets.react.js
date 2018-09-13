@@ -40,7 +40,7 @@ class Planets extends Component {
           <hr className="my-4"/>
           <p>Climate: {planets.climate}</p>
           <hr className="my-4"/>
-          <p>Terrain: {planets.terrain}</p>
+          <p>Terrain: {planets.terrain}.</p>
           <hr className="my-4"/>
           <p>Water Surface: {planets.surface_water}</p>
           <hr className="my-4"/>
