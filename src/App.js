@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { SlideToggle } from 'react-slide-toggle';
+
 
 import NavBar from './js/components/views/NavBar.react';//
 import Home from './js/components/home/home.react';//
@@ -15,9 +15,10 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-          <div>
-            <NavBar />
-                
+          <div className="">
+              <NavBar />
+              <div id="page-content-wrapper">
+                <div className="container-fluid">
                 <div id="contenido" className="container-fluid">
                   <br />
                     <div className="container">
@@ -29,9 +30,11 @@ class App extends Component {
                       <Route path="/Planets" component={Planets} />
                     </div>
                 </div>
+                </div>
                 <hr className="my-4"/>
                 <Footer />
               </div>
+          </div>
       </BrowserRouter>
 
   );
