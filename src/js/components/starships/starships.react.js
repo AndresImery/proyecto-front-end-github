@@ -18,7 +18,7 @@ class Starships extends Component {
       axios.get('https://swapi.co/api/starships/')
         .then((response) => {
           console.log(response)
-          this.setState({spaceships: response.data.results})
+          this.setState({starships: response.data.results})
         }).catch((error) => {
           console.log(error)
         });
@@ -43,7 +43,7 @@ class Starships extends Component {
           <hr className="my-4"/>
           <p>Passengers: {starship.passengers}</p>
           <hr className="my-4"/>
-          <p>Vehicle Class: {starship.vehicle_class}</p>
+          <p>Vehicle Class: {starship.starship_class}</p>
         </div>
       </div>
     </div>
