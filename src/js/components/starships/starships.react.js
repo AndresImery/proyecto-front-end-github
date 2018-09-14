@@ -9,7 +9,7 @@ class Starships extends Component {
     super(props);
 
     this.state = {
-      spaceships : []
+      starships : []
     }
   }
 
@@ -27,23 +27,23 @@ class Starships extends Component {
 
   }
   render() {
-    var cruceros = this.state.starships.map(function(starships){
+    var starships = this.state.starships.map(function(starship){
       return <div className="col-lg-3 col-md-4 col-sm-6 portfolio-item">
       <div className="card h-100">
         <div className="card-body">
           <h4 className="card-title">
-          {starships.name}
+          {starship.name}
           </h4>
 
-          <p className="lead">Model: {starships.model}</p>
+          <p className="lead">Model: {starship.model}</p>
           <hr className="my-4"/>
-          <p>Manufacturer: {starships.manufacturer}</p>
+          <p>Manufacturer: {starship.manufacturer}</p>
           <hr className="my-4"/>
-          <p>Crew: {starships.crew}</p>
+          <p>Crew: {starship.crew}</p>
           <hr className="my-4"/>
-          <p>Passengers: {starships.passengers}</p>
+          <p>Passengers: {starship.passengers}</p>
           <hr className="my-4"/>
-          <p>Vehicle Class: {starships.vehicle_class}</p>
+          <p>Vehicle Class: {starship.vehicle_class}</p>
         </div>
       </div>
     </div>
@@ -55,7 +55,7 @@ class Starships extends Component {
         <h1 className="my-4">Starships</h1>
 
             <div className="row">
-            {cruceros}
+            {starships}
             </div>
             
       </div>

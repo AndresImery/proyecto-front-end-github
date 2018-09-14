@@ -29,7 +29,7 @@ class Characters extends Component {
       return <div className="col-lg-3 col-md-4 col-sm-6 portfolio-item">
       <div className="card h-100">
         <div id="img-top">
-          <a id="img-top-a" href="#"><img className="card-img-top" id="img" src="characters/1_luke_skywalker.jpg" alt=""/></a>
+          <a id="img-top-a" href="#"><img className="card-img-top" id="img" src="./characters/1_luke_skywalker.jpg" alt=""/></a>
         </div>
         <div className="card-body">
           <h4 className="card-title">

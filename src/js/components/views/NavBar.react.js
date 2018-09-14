@@ -10,11 +10,7 @@ class NavBar extends Component {
     
             <div id="sidebar-wrapper">
                 <ul className="sidebar-nav">
-                    <li>
-                        <div>
-                        <a href=""><img id="starLogo" src="img/logo.png" alt=""/></a> 
-                        </div>
-                    </li>
+                    
                     <li className="sidebar-brand">
     
                         <a href="" className="navbar-brand">

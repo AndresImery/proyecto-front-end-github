@@ -35,7 +35,7 @@ class Movies extends Component {
                     <p>{movies.opening_crawl}</p>
                     <p>Date: {movies.release_date}</p>
                     <p>Director : {movies.director}</p>
-                    <p>Producer: {movies.producer}</p>
+                    <p>Producer(s): {movies.producer}</p>
                     <p class="lead">
                         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                             Characters in the movie

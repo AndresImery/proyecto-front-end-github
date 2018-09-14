@@ -17,12 +17,7 @@
     background-size: cover;
     background-attachment: fixed;
     text-align: center;
-    color: white;
   }
-
-#homeli{
-  margin-top: 6em;
-}
 
  hr{
       background-color: white;
@@ -179,17 +174,6 @@
 
 .logo {
   max-width: 50px;
-}
-
-#logo{
-  margin: 0 auto;
-  margin-top: 1.5em;
-  width: 10em;
-  height: 6em;
-  background-image: url('../img/logo.png');
-  background-size: 10em;
-  background-position: top;
-  background-repeat: none;
 }
 
 #starLogo {
